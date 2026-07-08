@@ -89,7 +89,7 @@ def train_model(df, model_type, hyperparams, test_size=0.2, random_state=42):
     
     # Calculate metrics
     accuracy = accuracy_score(y_test, y_pred)
-    precision, recall, f1, _ = precision_recall_fscore_support(y_test, y_pred, average='weighted')
+    precision, recall, f1, _ = precision_recall_fscore_support(y_test, y_pred, average='weighted', zero_division=0)
     
     metrics = {
         "accuracy": accuracy,
